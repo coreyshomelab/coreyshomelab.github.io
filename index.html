@@ -10,11 +10,11 @@
 		"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 		</script>
 			<script>			
-			$.getJSON("http://ip-api.com/json/?fields=country,regionName,city,query", function(data) {
-				$("#ipaddress").html(data.query);
+			$.getJSON("https://ipapi.co/json/", function(data) {
+				$("#ipaddress").html(data.ip);
 				$("#city").html(data.city);
-				$("#state").html(data.regionName);
-				$("#country").html(data.country);
+				$("#state").html(data.region);
+				$("#country").html(data.country_name);
 			})
 			</script>
 	</head>
@@ -26,19 +26,12 @@
 							<p>If you are seeing this webpage, check your VPN connection/configuration<br />
 							Your current IP address is:<br />
 							<h3></h3>
-							<a href="https://whatismyipaddress.com/" class="button fit" id="ipaddress"></a>
+							<a href="https://ipapi.co/" class="button fit" id="ipaddress" title="Click for more details"></a>
 							<h3></h3>
 							<span>Location:</span><br />
 							<span id="city"></span>, 
 							<span id="state"></span>, 
 							<span id="country"></span>.<br />
-							<!--<script>
-								var val = document.getElementById("ipaddress").id;
-							</script>
-							<script>
-								let loc = "https://whatismyipaddress.com/ip/"+val;
-								document.write('<a href="' + loc + '">Test Link</a>');
-							</script> -->
 						</div>
 					</section>
 			</div>
